@@ -9,6 +9,11 @@ int main(int argc, char *argv[]) {
   int customer = 1;
   for (i = 1; i < argc; i++) {
     if (argv[i][0] == 'x') {
+      if(q.getSize()==0)
+      {
+        cout<<"Queue is empty"<<endl;
+        break;
+      }
       order = q.node()->order_number();
       price = q.dequeue();
       cout << "Customer No." << customer++ << endl;
@@ -22,6 +27,8 @@ int main(int argc, char *argv[]) {
       case 3:
         cout << "Fried Chicken" << endl;
         break;
+        default: cout<<"Menu is not in the list"<<endl; break;
+        
       }
       cout << "You have to pay " << price << endl;
       int money, change;
